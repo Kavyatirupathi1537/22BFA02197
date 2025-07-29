@@ -1,0 +1,27 @@
+// src/context/LoggerContext.jsx
+import React, { createContext, useContext } from 'react';
+
+const LoggerContext = createContext();
+
+export const LoggerProvider = ({ children }) => {
+  const log = (type, message, data = null) => {
+    const logEntry = {
+      timestamp: new Date().toISOString(),
+      type,
+      message,
+      ...(data && { data })
+    };
+
+    // Send to fake logging middleware
+    // (in real use case, post to /log or store in localStorage)
+    alert(JSON.stringify(logEntry, null, 2)); // replace this line with actual logging logic
+  };
+
+  return (
+    <LoggerContext.Provider value={{ log }}>
+      {children}
+    </LoggerContext.Provider>
+  );
+};
+
+export const useLogger = () => useContext(LoggerContext);
