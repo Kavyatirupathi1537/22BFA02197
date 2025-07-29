@@ -1,0 +1,15 @@
+// src/components/URLAnalytics.jsx
+import React from 'react';
+
+const URLAnalytics = ({ urls }) => {
+  const totalClicks = urls.reduce((sum, u) => sum + u.clicks, 0);
+  return (
+    <div className="analytics">
+      <h3>Analytics</h3>
+      <p>Total Shortened URLs: {urls.length}</p>
+      <p>Total Clicks: {totalClicks}</p>
+    </div>
+  );
+};
+
+export default URLAnalytics;

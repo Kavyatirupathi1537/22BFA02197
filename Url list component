@@ -1,0 +1,31 @@
+// src/components/URLList.jsx
+import React from 'react';
+import { useLogger } from '../context/LoggerContext';
+
+const URLList = ({ urls, onClickShort }) => {
+  const { log } = useLogger();
+
+  const handleClick = (short) => {
+    onClickShort(short);
+    log('INFO', 'Short URL clicked', { short });
+  };
+
+  return (
+    <div className="list">
+      <h3>Shortened URLs</h3>
+      {urls.length === 0 ? <p>No URLs yet.</p> : (
+        urls.map(({ short, original, clicks }) => (
+          <div key={short} className="url-item">
+            <p><strong>{original}</strong></p>
+            <p>
+              <a href="#" onClick={() => handleClick(short)}>https://short.ly/{short}</a>
+            </p>
+            <small>Clicks: {clicks}</small>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};
+
+export default URLList;
