@@ -1,0 +1,53 @@
+/* src/styles.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background: white;
+  margin-top: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+input[type='url'] {
+  flex: 1;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.list .url-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.analytics {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+}
